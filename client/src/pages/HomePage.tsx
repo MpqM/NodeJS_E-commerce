@@ -10,7 +10,7 @@ const HomePage = () => {
   
   return (
     <div>
-        <Header activeHeading={1}/>
+        <Header />
         <Hero />
         <Categories />
         <Top100 />

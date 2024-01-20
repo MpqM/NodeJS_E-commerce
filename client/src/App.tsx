@@ -6,14 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import { fetchData } from './redux/auth/authSlice';
 import { AppDispatch, RootState } from './redux/store';
-import { ActivationPage, HomePage, LoginPage, SignupPage, ProductPage, Top100Page, PromotionPage, FaqPage, ProductDetailPage, CheckOutPage, PaymentPage, OrderSuccessPage } from "./routes";
+import { ActivationPage, HomePage, LoginPage, SignupPage, ProductPage, Top100Page, PromotionPage, FaqPage, ProductDetailPage, CheckOutPage, PaymentPage, ProfilePage, OrderSuccessPage } from "./routes";
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>();
-  useEffect(() => { 
+  useEffect(() => {
     dispatch(fetchData())
   }, [dispatch])
-  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -29,6 +29,7 @@ const App = () => {
         <Route path='/checkout/' element={<CheckOutPage />} />
         <Route path='/payment/' element={<PaymentPage />} />
         <Route path='/order/success/:id' element={<OrderSuccessPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
       </Routes>
       <ToastContainer
         position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false}

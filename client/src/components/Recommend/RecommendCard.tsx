@@ -12,8 +12,8 @@ const RecommendProduct = ({ product, setOpen }: ProductCardProps) => {
     return (
         <div className='border-x-[1px] border-b-[1px] border-black p-1 mb-8'>
             <Link to={`/product/${product_name}`}><img src={product.image_Url[0].url} alt="" className='w-full h-[170px] object-contain border-b-[1px] border-black' /></Link>
-            <Link to="/"><h5 className='font-medium'>{product.shop.name}</h5> </Link>
-            <Link to={`/product/${product_name}`}><h4 className='font-sm'> {product.name.length > 40 ? product.name.slice(0, 40) + "..." : product.name} </h4></Link>
+            <Link to="/"><h1 className='font-medium'>{product.shop.name}</h1> </Link>
+            <Link to={`/product/${product_name}`}><h1 className='font-sm'> {product.name.length > 40 ? product.name.slice(0, 40) + "..." : product.name} </h1></Link>
             <div className='flex flex-row mt-2'>
                 {click ? (
                     <AiFillHeart
@@ -41,8 +41,8 @@ const RecommendProduct = ({ product, setOpen }: ProductCardProps) => {
             </div>
             <div className='py-2 flex items-center justify-between'>
                 <div className='flex flexx-row font-bold text-[15px]'>
-                    <h5 >{product.price === 0 ? product.price : product.discount_price} 원</h5>
-                    <h5 className='text-[#ff0000] ml-1 line-through'>{product.price ? product.price + "원" : null}</h5>
+                    <h1 >{product.price === 0 ? product.price : product.discount_price} 원</h1>
+                    <h1 className='text-[#ff0000] ml-1 line-through'>{product.price ? product.price + "원" : null}</h1>
                 </div>
             </div>
             <div className='flex flex-row items-center'><AiFillStar /><span>{product.total_sell} 판매</span></div>

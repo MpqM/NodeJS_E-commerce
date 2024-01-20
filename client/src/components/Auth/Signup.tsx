@@ -41,46 +41,48 @@ const Signup = () => {
     };
 
     return (
-        <div className="min-h-screen bg-grey flex flex-col justify-center p-5 bg-white">
+        <div className={`${styles.auth_container}`}>
             {/* 제목, 부제목 */}
             <div>
-                <h1 className="mx-auto w-full max-w-md text-center text-5xl text-black mb-3"> E-COMMERCE </h1>
-                <h2 className="mx-auto w-full max-w-md text-center text-3xl text-black mb-3"> 회원가입 </h2>
+                <h1 className="mx-auto w-full max-w-md text-center text-3xl font-bold mb-3"> E-COMMERCE </h1>
+                <h1 className="mx-auto w-full max-w-md text-center text-3xl font-bold mb-3"> 회원가입 </h1>
             </div>
 
             {/* 회원가입 폼 */}
-            <div className="mx-auto w-full max-w-md bg-white p-5 rounded-md border-[1px] border-black">
-                <form className="space-y-5" onSubmit={handleSubmit}>
+            <div className="mx-auto w-full max-w-md p-5 rounded-md border-[1px] border-black">
+                <form onSubmit={handleSubmit} className="space-y-5">
                     {/* 이름 입력 */}
                     <div>
-                        <label htmlFor="username" className='block text-sm text-black mb-1'> 이름 </label>
+                        <label htmlFor="username" className='block text-sm mb-1'> 이름 </label>
                         <input
-                            type="text" name='text' autoComplete='name' required value={name} onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => setName(e.target.value)}
+                            value={name} type="text" name='text' autoComplete='name' required
                             className='appearance-none block w-full p-3 shadow rounded-md focus:outline-none focus:ring-1 focus:ring-black'
                         />
                     </div>
 
                     {/* 이메일 입력 */}
                     <div>
-                        <label htmlFor="email" className='block text-sm text-black mb-1'> 이메일 </label>
+                        <label htmlFor="email" className='block text-sm mb-1'> 이메일 </label>
                         <input
-                            type="email" name='email' autoComplete='email' required value={email} onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email} type="email" name='email' autoComplete='email' required
                             className='appearance-none block w-full p-3 shadow rounded-md focus:outline-none focus:ring-1 focus:ring-black'
                         />
                     </div>
-                    
+
                     {/* 비밀번호 입력 */}
                     <div>
-                        <label htmlFor="username" className='block text-sm text-black mb-1'> 비밀번호 </label>
-                        <div className='relative'>
+                        <label htmlFor="username" className='block text-sm mb-1'> 비밀번호 </label>
+                        <div className="relative">
                             <input
-                                type={visible ? "text" : "password"} name='password' autoComplete='current-password' required
-                                value={password} onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password} type={visible ? "text" : "password"} name='password' autoComplete='current-password' required
                                 className='appearance-none block w-full p-3 shadow rounded-md focus:outline-none focus:ring-1 focus:ring-black'
                             />
                             {visible
-                                ? (<AiOutlineEye className='absolute right-3 top-3 cursor-pointer' size={25} onClick={() => setVisible(false)} />)
-                                : (<AiOutlineEyeInvisible className='absolute right-3 top-3 cursor-pointer' size={25} onClick={() => setVisible(true)} />)
+                                ? (<AiOutlineEye onClick={() => setVisible(false)} size={25} className='absolute right-3 top-3 cursor-pointer' />)
+                                : (<AiOutlineEyeInvisible onClick={() => setVisible(true)} size={25} className='absolute right-3 top-3 cursor-pointer' />)
                             }
                         </div>
                     </div>
@@ -103,11 +105,11 @@ const Signup = () => {
                             />
                         </label>
                     </div> */}
-                    
+
                     {/* 로그인, 회원가입 버튼 */}
-                    <div>
-                        <button type="submit" className='w-full h-[40px] flex justify-center p-2 text-medium rounded-md text-white bg-black hover:opacity-50 mb-3'> 회원가입 </button>
-                        <Link to="/login" className='w-full h-[40px] flex justify-center p-2 text-medium rounded-md text-white bg-black hover:opacity-50'> 로그인 </Link>
+                    <div className="space-y-3">
+                        <button type="submit" className='w-full h-[40px] flex justify-center items-center p-2 rounded-md border-[1px] border-black hover:opacity-30'> 회원가입 </button>
+                        <Link to="/login" className='w-full h-[40px] flex justify-center items-center p-2 rounded-md border-[1px] border-black hover:opacity-30'> 로그인 </Link>
                     </div>
                 </form>
             </div>

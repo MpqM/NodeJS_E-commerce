@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { productDatas } from '../../static/productData';
 import { ProductData } from '../../helpers/interface';
-import ProductCardMd from "../Product/ProductCard"
+import ProductCard from "../Product/ProductCard"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import ProductCardDetail from '../Product/ProductDetailCard';
@@ -26,7 +26,7 @@ const Top100 = () => {
                 modules={[Pagination]}
                 className='w-11/12 mx-auto mb-3 border-[1px] border-black rounded-md cursor-pointer relative'
             >
-                {productsData && productsData.map((i, index) => (<SwiperSlide key={i.id}> <ProductCardMd productData={i} setOpen={(flag, productData) => setOpen({ flag, productData })} /> </SwiperSlide>))}
+                {productsData && productsData.map((i, index) => (<SwiperSlide key={i.id}> <ProductCard productData={i} setOpen={(flag, productData) => setOpen({ flag, productData })} /> </SwiperSlide>))}
             </Swiper>
             {open?.flag === true ? (<ProductCardDetail productData={open.productData} setOpen={(flag, productData) => setOpen({ flag, productData })} />) : null}
         </div>

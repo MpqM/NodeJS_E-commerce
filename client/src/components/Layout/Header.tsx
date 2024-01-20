@@ -10,9 +10,8 @@ import Navbar from './Navbar'
 import { RootState } from '../../redux/store'
 import { useSelector } from 'react-redux'
 
-interface HeaderProps { activeHeading: number; }
 
-const Header = ({ activeHeading }: HeaderProps) => {
+const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchData, setSearchData] = useState<ProductData[] | null>();
     const [activeSearchData, setActiveSearchData] = useState(false);
@@ -79,7 +78,7 @@ const Header = ({ activeHeading }: HeaderProps) => {
                             {dropDown ? (<DropDown size={200} categoryData={categoryData} setDropDown={setDropDown} />) : null}
                         </button>
                         <div className='flex items-center'>
-                            <Navbar active={activeHeading} />
+                            <Navbar />
                         </div>
                     </div>
                 </div>
@@ -95,7 +94,7 @@ const Header = ({ activeHeading }: HeaderProps) => {
                     </button>
                 </div>
                 <div className='flex w-auto md:hidden mx-auto overflow-x-scroll whitespace-nowrap p-1 pb-3 border-[1px] border-black'>
-                    <Navbar active={activeHeading} />
+                    <Navbar />
                 </div>
             </div>
         </>

@@ -18,11 +18,11 @@ const Promotion = () => {
                     <PromotionProductCard promotionData={promotionData[currentIndex]} />
                 </div>
 
-                <div className='hidden group-hover:block absolute top-[20%] md:top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-3 border-[1px] border-black bg-white text-black cursor-pointer'>
+                <div className='hidden group-hover:block absolute top-[20%] md:top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-3 border-[1px] border-black bg-white  cursor-pointer'>
                     <BsChevronCompactLeft size={25} onClick={prev} />
                 </div>
 
-                <div className='hidden group-hover:block absolute top-[20%] md:top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-3 border-[1px] border-black bg-white text-black cursor-pointer '>
+                <div className='hidden group-hover:block absolute top-[20%] md:top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-3 border-[1px] border-black bg-white  cursor-pointer '>
                     <BsChevronCompactRight size={25} onClick={next} />
                 </div>
 

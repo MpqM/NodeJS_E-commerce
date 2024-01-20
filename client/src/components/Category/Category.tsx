@@ -13,7 +13,7 @@ const Category = () => {
 
   return (
     <div>
-      <h1 className='w-11/12 mx-auto mb-3 border-[1px] border-black rounded-md text-[20px] text-center'>카테고리</h1>
+      <h1 className='w-11/12 mx-auto mb-3 border-[1px] border-black rounded-md text-xl font-bold text-center'>카테고리</h1>
       {/* 카테고리 슬라이드 */}
       <Swiper
         breakpoints={{ 200: { slidesPerView: 3, spaceBetween: 3, }, 768: { slidesPerView: 8, spaceBetween: 3, }, }}
@@ -25,7 +25,7 @@ const Category = () => {
           <SwiperSlide key={i.id}>
             <div onClick={() => handleSubmit(i)} className="border-x-[1px] border-b-[1px] border-black p-1 relative mb-8 hover:opacity-50">
               <img src={i.image_Url} />
-              <h1 className="bg-white/50 text-center border-t-[1px] border-black text-black text-medium">{i.title} </h1>
+              <h1 className="bg-white/50 text-center border-t-[1px] border-black">{i.title} </h1>
             </div>
           </SwiperSlide>
         ))}

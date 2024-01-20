@@ -5,7 +5,7 @@ import { promotionData } from '../static/promotionData';
 const PromotionPage = () => {
     return (
         <div>
-            <Header activeHeading={4} />
+            <Header />
             {promotionData && promotionData.map((i, index) => ( <PromotionProductCard promotionData={i} /> ))
             }
         </div>

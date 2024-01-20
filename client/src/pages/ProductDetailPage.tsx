@@ -16,7 +16,7 @@ const ProductDetailPage = () => {
     })
   return (
     <div>
-        <Header activeHeading={99}/>
+        <Header />
         <ProductDetail productData={productData!}/>
         <ProductRelate productData={productData!} />
     </div>

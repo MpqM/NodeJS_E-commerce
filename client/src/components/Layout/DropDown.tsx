@@ -55,9 +55,9 @@ const DropDown = ({ size, categoryData, setDropDown }: DropDownProps) => {
                         key={i.id}
                         onClick={() => submitHandle(1, i)}
                         onMouseEnter={() => handleHover(1, true, size * 2, i)}
-                        className={`w-[${size + 'px'}] flex-col flex items-center justify-center`}
+                        className={`w-[${size + 'px'}] `}
                     >
-                        <h3 className='m-3 cursor-pointer select-none'>{i.title}</h3>
+                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
                     </div>
                 ))}
             </div>
@@ -69,9 +69,9 @@ const DropDown = ({ size, categoryData, setDropDown }: DropDownProps) => {
                         key={i.id}
                         onClick={() => { submitHandle(2, i) }}
                         onMouseEnter={() => handleHover(2, true, size * 3, i)}
-                        className={`w-[${size + 'px'}] flex-col flex items-center justify-center`}
+                        className={`w-[${size + 'px'}]`}
                     >
-                        <h3 className='m-3 cursor-pointer select-none'>{i.title}</h3>
+                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
                     </div>
                 ))}
             </div>
@@ -82,9 +82,9 @@ const DropDown = ({ size, categoryData, setDropDown }: DropDownProps) => {
                     <div
                         key={i.id}
                         onClick={() => { submitHandle(3, i) }}
-                        className={`w-[${size + 'px'}] flex-col flex items-center justify-center`}
+                        className={`w-[${size + 'px'}]`}
                     >
-                        <h3 className='m-3 cursor-pointer select-none'>{i.title}</h3>
+                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
                     </div>
                 ))}
             </div>

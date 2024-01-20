@@ -10,4 +10,5 @@ import ProductDetailPage from "./pages/ProductDetailPage"
 import CheckOutPage from "./pages/CheckOutPage"
 import PaymentPage from "./pages/PaymentPage"
 import OrderSuccessPage from "./pages/OrderSuccessPage"
-export { LoginPage, SignupPage, ActivationPage,HomePage, ProductPage, Top100Page, PromotionPage, FaqPage, ProductDetailPage, CheckOutPage, PaymentPage, OrderSuccessPage }
+import ProfilePage from "./pages/ProfilePage"
+export { LoginPage, SignupPage, ActivationPage,HomePage, ProductPage, Top100Page, PromotionPage, FaqPage, ProductDetailPage,ProfilePage, CheckOutPage, PaymentPage, OrderSuccessPage }

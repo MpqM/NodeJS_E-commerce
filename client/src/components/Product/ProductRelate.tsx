@@ -1,18 +1,55 @@
 import React, { useEffect, useState } from 'react'
 import { ProductData } from '../../helpers/interface'
-import { productDatas} from '../../static/productData'
+import { productDatas } from '../../static/productData'
+import { customRenderBullet } from '../../helpers/customSwiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
+import ProductCard from './ProductCard';
+import ProductCardDetailCard from './ProductDetailCard';
 
 interface ProductRelateProps { productData: ProductData | null }
 
 const ProductRelate = ({ productData }: ProductRelateProps) => {
+  const [open, setOpen] = useState<{ flag: boolean, productData: ProductData | null }>()
   const [products, setProducts] = useState<ProductData[]>();
+  const navigate = useNavigate();
+  const handleSubmit = (i: ProductData) => {  navigate(`/product/${i.id}`) }
   useEffect(() => {
-    const d = productDatas && productDatas.filter((i) => i.category === productData?.category);
-    setProducts(d)
-  })
+
+    const sameCategory = productData?.category ?? [];
+    switch (productData?.category?.length) {
+      case 1:
+        setProducts(productDatas.filter((i) => i.category[0] === sameCategory[0]).sort((a, b) => a.total_sell - b.total_sell));
+        break;
+      case 2:
+        setProducts(productDatas.filter((i) => i.category[0] === sameCategory[0] && i.category[1] === sameCategory[1]).sort((a, b) => a.total_sell - b.total_sell));
+        break;
+      case 3:
+        setProducts(productDatas.filter((i) => i.category[0] === sameCategory[0] && i.category[1] === sameCategory[1] && i.category[2] === sameCategory[2]).sort((a, b) => a.total_sell - b.total_sell));
+        break;
+      default:
+        setProducts(productDatas.sort((a, b) => a.total_sell - b.total_sell));
+        break;
+    }
+  }, [productData?.category]);
+
   return (
     <div>
-      {productData ? () : null}
+      {productData ? (
+        <div className='w-11/12 mx-auto mb-20'>
+          <h1 className='text-center md:text-start pb-3 text-xl font-bold border-b mb-5'> 관련 상품</h1>
+          <Swiper
+                breakpoints={{ 200: { slidesPerView: 2, spaceBetween: 3, }, 768: { slidesPerView: 5, spaceBetween: 3, }, }}
+                pagination={{ clickable: true, renderBullet: customRenderBullet, }}
+                modules={[Pagination]}
+                className='w-11/12 mx-auto mb-3 border-[1px] border-black rounded-md cursor-pointer relative'
+            >
+                {products && products.map((i, index) => (<SwiperSlide key={i.id}> <ProductCard productData={i} setOpen={(flag, productData) => setOpen({ flag, productData })} /> </SwiperSlide>))}
+            </Swiper>
+            {open?.flag === true ? (<ProductCardDetailCard productData={open.productData} setOpen={(flag, productData) => setOpen({ flag, productData })} />) : null}
+        </div>
+      ) : null}
     </div>
   )
 }

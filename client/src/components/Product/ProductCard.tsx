@@ -12,12 +12,12 @@ const ProductCard = ({ productData, setOpen }: ProductCardProps) => {
     return (
         <div className='border-[1px] border-black p-1 mt-1 mb-8'>
             <Link to={`/product/${productId}`}><img src={productData.image_Url[0].url} alt="" className='w-full h-[170px] object-contain border-b-[1px] border-black' /></Link>
-            <Link to="/"><h5>{productData.shop.name}</h5> </Link>
-            <Link to={`/product/${productId}`}><h4 className='font-bold'> {productData.name.length > 40 ? productData.name.slice(0, 40) + "..." : productData.name} </h4></Link>
+            <Link to="/"><h1>{productData.shop.name}</h1> </Link>
+            <Link to={`/product/${productId}`}><h1 className='font-bold'> {productData.name.length > 40 ? productData.name.slice(0, 40) + "..." : productData.name} </h1></Link>
             
             <div className='py-2 flex text-15px items-center space-x-2'>
-                <h5 >{productData.price === 0 ? productData.price : productData.discount_price} 원</h5>
-                <h5 className='text-[#ff0000] line-through'>{productData.price ? productData.price + "원" : null}</h5>
+                <h1 >{productData.price === 0 ? productData.price : productData.discount_price} 원</h1>
+                <h1 className='text-[#ff0000] line-through'>{productData.price ? productData.price + "원" : null}</h1>
                 <span>{productData.total_sell} 판매</span>
             </div>
             

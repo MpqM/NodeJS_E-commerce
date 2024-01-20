@@ -21,7 +21,7 @@ const ProductDetail = ({ productData }: ProductDetailProps) => {
   return (
     <div className='bg-white'>
       {productData ? (
-        <div className='w-11/12 mx-auto h-screen'>
+        <div className='w-11/12 mx-auto'>
           <div className='w-full py-4'>
             <div className='block w-full md:flex'>
               <div className='w-full md:w-[50%] '>
@@ -38,30 +38,30 @@ const ProductDetail = ({ productData }: ProductDetailProps) => {
               <div className='w-full md:w-[50%]'>
                 <div className='flex my-5'>
                   <img src={productData.shop.shop_avatar.url} alt="" className='w-[50px] h-[50px] rounded-full mr-2' />
-                  <h3 className='p-3 text-[15px]'>{productData.shop.name} ({productData.shop.ratings})</h3>
+                  <h1 className='p-3 text-[15px]'>{productData.shop.name} ({productData.shop.ratings})</h1>
                 </div>
                 <h1 className='font-bold text-[20px]'>{productData?.name}</h1>
                 <p>{productData.description}</p>
-                <div className='flex font-bold text-[20px] mb-5 space-x-3'>
-                  <h5 >{productData.price === 0 ? productData.price : productData.discount_price} 원</h5>
-                  <h5 className='text-[#ff0000] line-through'>{productData.price ? productData.price + "원" : null}</h5>
-                  <h5 className='text-[20px] '>{productData.total_sell} 판매</h5>
+                <div className='flex font-bold text-[20px] mb-5 space-x-3 text-sm md:text-base'>
+                  <h1 >{productData.price === 0 ? productData.price : productData.discount_price} 원</h1>
+                  <h1 className='text-[#ff0000] line-through'>{productData.price ? productData.price + "원" : null}</h1>
+                  <h1 >{productData.total_sell} 판매</h1>
                 </div>
-                <div className='flex tems-center justify-between flex-col space-y-1 w-full text-center'>
+                <div className='flex tems-center justify-between flex-col space-y-1 w-full text-center text-sm md:text-base'>
                   <div className='flex'>
-                    <button onClick={() => calCount('-')} className='bg-white flex-1 items-center text-black hover:opacity-75 rounded-l-md border-[1px] border-black'><CiCircleMinus size={25} className='text-center w-full' /></button>
-                    <span className='bg-white flex-1 items-center text-black hover:opacity-75  tex-black font-medium p-2 border-y-[1px] border-black'>{count}</span>
-                    <button onClick={() => calCount('+')} className='bg-white flex-1 items-center text-black hover:opacity-75 rounded-r-md border-[1px] border-black'><CiCirclePlus size={25} className='text-center w-full' /></button>
+                    <button onClick={() => calCount('-')} className='bg-white flex-1 items-center  hover:opacity-75 rounded-l-md border-[1px] border-black'><CiCircleMinus size={25} className='text-center w-full' /></button>
+                    <span className='bg-white flex-1 items-center  hover:opacity-75  tex-black font-medium p-2 border-y-[1px] border-black'>{count}</span>
+                    <button onClick={() => calCount('+')} className='bg-white flex-1 items-center  hover:opacity-75 rounded-r-md border-[1px] border-black'><CiCirclePlus size={25} className='text-center w-full' /></button>
                   </div>
-                  <div className='text-black flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black'> <AiOutlineShoppingCart size={25} className='mr-3' /> 장바구니 </div>
-                  <div className='text-black flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black' onClick={() => setClickHeart(!clickHeart)}>
+                  <div className=' flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black'> <AiOutlineShoppingCart size={25} className='mr-3' /> 장바구니 </div>
+                  <div className=' flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black' onClick={() => setClickHeart(!clickHeart)}>
                     {clickHeart
                       ? (<AiFillHeart size={25} color={clickHeart ? "red" : "black"} title='Remove from wishlist' className='mr-3 cursor-pointer' />)
                       : (<AiOutlineHeart size={25} color={clickHeart ? "red" : "black"} title='Add to wishlist' className='mr-3 cursor-pointer' />)
                     }
                     관심목록
                   </div>
-                  <div className='text-black flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black'> <AiOutlineMessage size={25} className='mr-3' /> 문의하기 </div>
+                  <div className=' flex w-full justify-center bg-white p-3 rounded-md cursor-pointer hover:opacity-50 border-[1px] border-black'> <AiOutlineMessage size={25} className='mr-3' /> 문의하기 </div>
                 </div>
               </div>
             </div>

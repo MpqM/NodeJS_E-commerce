@@ -10,6 +10,7 @@ const Footer = () => {
       <div className='mb-5 cursor-pointer flex flex-row w-full justify-center space-x-3'>
         <img src="" style={{ width: "150px", objectFit: "contain" }} alt="" />
       </div>
+
       {/* 구독, 관련 SNS */}
       <div className='mb-3 flex justify-center items-center space-x-'>
         <input type="text" required placeholder='구독해서 저희의 이벤트와 소식을 제공받아요.' className='p-1.5 w-[30%] border-[1px] appearance-none block border-black rounded-md focus:outline-none focus:ring-1 focus:ring-black' />
@@ -19,11 +20,13 @@ const Footer = () => {
         <AiFillInstagram size={50} className='cursor-pointer' />
         <AiFillYoutube size={50} className='cursor-pointer' />
       </div>
+
       {/* 관련 링크 */}
       <div className='mb-3 flex justify-center items-center space-x-3'>
         <h1>E-COMMERCE</h1>
-        {footerLinktData && footerLinktData.map((i, index) => ( <Link key={index} to={i.link} className="text-black hover:opacity-50 text-sm cursor-pointer">{i.name}</Link>))}
+        {footerLinktData && footerLinktData.map((i, index) => ( <Link key={index} to={i.link} className=" hover:opacity-50 text-sm cursor-pointer">{i.name}</Link>))}
       </div>
+
       {/* right */}
       <span className='mb-3 text-sm flex justify-center items-center space-x-3'>© 2023 MpqM. All rights reserved.</span>
     </div>
