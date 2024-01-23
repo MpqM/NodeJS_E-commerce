@@ -5,12 +5,12 @@ interface PromotionProductCardProps { promotionData: PromotionData }
 
 const PromotionProductCard = ({ promotionData }: PromotionProductCardProps) => {
     return (
-        <div className='w-full block bg-white rounded-md md:flex p-2 my-10'>
-            <div className='w-full md:w-[50%] m-auto '>
+        <div className='w-full block bg-white rounded-md xl:flex p-2 my-10'>
+            <div className='w-full xl:w-[50%] m-auto '>
                 <img src={promotionData.image_Url[0].url} alt="" />
             </div>
 
-            <div className='w-full md:[w-50%] flex flex-col justify-center mr-[70px]'>
+            <div className='w-full xl:[w-50%] flex flex-col justify-center mr-[70px]'>
                 <h1 className='text-[25px] font-[600] font-Roboto text-[#333]'>{promotionData.name} </h1>
                 <p className='mb-3'>{promotionData.description}</p>
                 <div className='flex justify-between font-bold text-[20px] mb-3'>

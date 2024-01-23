@@ -8,18 +8,18 @@ const ProductDetailInfo = ({ productData }: ProductDetailCardInfo) => {
     const [active, setActive] = useState(1);
 
     return (
-        <div className='border-[1px] border-black px-5 md:px-10 my-10 md:my-10 rounded-md text-sm md:text-base'>
+        <div className='border-[1px] border-black px-5 xl:px-10 my-10 xl:my-10 rounded-md text-sm xl:text-base'>
             <div className='w-full flex space-x-5 border-b pt-10 pb-2'>
                 <div className='relative'>
-                    <h1 className='px-1 font-bold cursor-pointer text-sm md:text-base' onClick={() => setActive(1)}> 상품 상세 정보 </h1>
+                    <h1 className='px-1 font-bold cursor-pointer text-sm xl:text-base' onClick={() => setActive(1)}> 상품 상세 정보 </h1>
                     {active === 1 ? (<div className='absolute bottom-[-27%] left-0 h-[3px] w-full bg-[black]' />) : null}
                 </div>
                 <div className='relative'>
-                    <h1 className='px-1 font-bold cursor-pointer text-sm md:text-base' onClick={() => setActive(2)}> 상품 리뷰 </h1>
+                    <h1 className='px-1 font-bold cursor-pointer text-sm xl:text-base' onClick={() => setActive(2)}> 상품 리뷰 </h1>
                     {active === 2 ? (<div className='absolute bottom-[-27%] left-0 h-[3px] w-full bg-[black]' />) : null}
                 </div>
                 <div className='relative'>
-                    <h1 className='px-1 font-bold cursor-pointer text-sm md:text-base' onClick={() => setActive(3)}> 판매자 정보 </h1>
+                    <h1 className='px-1 font-bold cursor-pointer text-sm xl:text-base' onClick={() => setActive(3)}> 판매자 정보 </h1>
                     {active === 3 ? (<div className='absolute bottom-[-27%] left-0 h-[3px] w-full bg-[black]' />) : null}
                 </div>
             </div>
@@ -53,8 +53,8 @@ const ProductDetailInfo = ({ productData }: ProductDetailCardInfo) => {
                 </div>
             ) : null}
             {active === 3 ? (
-                <div className='w-full block md:flex p-5'>
-                    <div className="w-full md:w-[50%]">
+                <div className='w-full block xl:flex p-5'>
+                    <div className="w-full xl:w-[50%]">
                         <div className="flex items-center">
                             <div className='flex mb-5'>
                                 <img src={productData.shop.shop_avatar.url} alt="" className='w-[50px] h-[50px] rounded-full mr-2' />
@@ -63,7 +63,7 @@ const ProductDetailInfo = ({ productData }: ProductDetailCardInfo) => {
                         </div>
                         <p className='pt-2'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil deleniti sit, architecto ad vero iusto distinctio omnis porro voluptate voluptatem in fugiat? Consectetur saepe, obcaecati deserunt exercitationem nesciunt assumenda error!</p>
                     </div>
-                    <div className="w-full md:w-[50%] mt-5 md:mt-0 md:flex flex-col items-end">
+                    <div className="w-full xl:w-[50%] mt-5 xl:mt-0 xl:flex flex-col items-end">
                         <div className='text-left'>
                             <h1 className='font-md'>판매자 가입일: 2024.1.20</h1>
                             <h1 className='font-md'>등록된 상품수: 2024</h1>

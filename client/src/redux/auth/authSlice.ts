@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UserData } from "../../helpers/interface";
 import { server } from "../../helpers/server";
 import axios from "axios";
+import { toast } from "react-toastify";
 
-interface AuthState {
+export interface AuthState {
     userData: UserData | null;
     isAuthenticated: boolean;
     error: string | null;

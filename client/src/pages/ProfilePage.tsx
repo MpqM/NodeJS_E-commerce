@@ -9,10 +9,10 @@ const ProfilePage = () => {
         <div>
             <Header />
             <div className='w-11/12 mx-auto flex'>
-                <div className='w-[350px] mr-3'>
+                <div className='w-[50px] xl:w-[350px] mr-3'>
                     <ProfileSidebar active={active} setActive={setActive} />
                 </div>
-                <ProfileContent/>
+                <ProfileContent active={active}/>
             </div>
         </div>
 

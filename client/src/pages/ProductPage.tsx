@@ -38,7 +38,7 @@ const ProductPage = () => {
         <div>
             <Header />
             <div className='mx-auto w-11/12'>
-                <div className='grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12'>
+                <div className='grid grid-cols-1 gap-[20px] xl:grid-cols-2 xl:gap-[25px] lg:grid-cols-4 lg:gap-[25px] xl:grid-cols-5 xl:gap-[30px] mb-12'>
                     {productsData && productsData.map((i, index) => <ProductCard key={i.id} productData={i} setOpen={(flag, productData) => setOpen({ flag, productData })} />)}
                 </div>
                 {productsData && productsData.length === 0 ? (<><h1 className='text-center w-full text-[20px]'>상품을 찾을 수 없습니다.</h1></>) : null}

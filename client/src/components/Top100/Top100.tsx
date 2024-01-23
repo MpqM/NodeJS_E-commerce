@@ -6,11 +6,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import ProductCardDetail from '../Product/ProductDetailCard';
 import { customRenderBullet } from '../../helpers/customSwiper';
+import styles from '../../styles/styles';
 
 const Top100 = () => {
     const [open, setOpen] = useState<{ flag: boolean, productData: ProductData | null }>()
     const [productsData, setProductsData] = useState<ProductData[]>();
-    
+
     useEffect(() => {
         const totalSellProduct = productDatas && productDatas.sort((a, b) => b.total_sell - a.total_sell)
         const top100 = totalSellProduct?.slice(0, 99);
@@ -18,8 +19,8 @@ const Top100 = () => {
     }, [])
 
     return (
-        <div>
-            <h1 className='w-11/12 mx-auto border-[1px] border-black font-medium rounded-md text-[20px] mb-3 text-center'>TOP10</h1>
+        <div className={`${styles.n_section}`}>
+            <h1 className={`${styles.n_section_title}`}>TOP10</h1>
             <Swiper
                 breakpoints={{ 200: { slidesPerView: 2, spaceBetween: 3, }, 768: { slidesPerView: 5, spaceBetween: 3, }, }}
                 pagination={{ clickable: true, renderBullet: customRenderBullet, }}

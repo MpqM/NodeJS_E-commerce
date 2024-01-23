@@ -38,7 +38,7 @@ const ProductRelate = ({ productData }: ProductRelateProps) => {
     <div>
       {productData ? (
         <div className='w-11/12 mx-auto mb-20'>
-          <h1 className='text-center md:text-start pb-3 text-xl font-bold border-b mb-5'> 관련 상품</h1>
+          <h1 className='text-center xl:text-start pb-3 text-xl font-bold border-b mb-5'> 관련 상품</h1>
           <Swiper
                 breakpoints={{ 200: { slidesPerView: 2, spaceBetween: 3, }, 768: { slidesPerView: 5, spaceBetween: 3, }, }}
                 pagination={{ clickable: true, renderBullet: customRenderBullet, }}

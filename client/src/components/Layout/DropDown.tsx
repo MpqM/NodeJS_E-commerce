@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CategoryData } from '../../helpers/interface';
+import styles from '../../styles/styles';
 
 interface DropDownProps { size: number, categoryData: CategoryData[], setDropDown: (dropDown: boolean) => void; }
 interface ActiveSubCategory { isActive: boolean, categoryData: CategoryData | null; }
@@ -47,23 +48,23 @@ const DropDown = ({ size, categoryData, setDropDown }: DropDownProps) => {
     }
 
     return (
-        <div style={{ width: categoryWidth }} className='mt-[13px] flex flex-row bg-white z-30 absolute border-[1px] border-black'>
+        <div style={{ width: categoryWidth }} className={`${styles.category_dropdown_container}`}>
             {/* 카테고리 첫번째 탭 */}
-            <div className='flex flex-col'>
+            <div className={`${styles.n_flex_col}`}>
                 {categoryData && categoryData.map((i: CategoryData, _) => (
                     <div
-                        key={i.id}
                         onClick={() => submitHandle(1, i)}
                         onMouseEnter={() => handleHover(1, true, size * 2, i)}
-                        className={`w-[${size + 'px'}] `}
+                        key={i.id}
+                        className={`w-[${size + 'px'}]`}
                     >
-                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
+                        <h1 className={`${styles.category_dropdown_item}`}>{i.title}</h1>
                     </div>
                 ))}
             </div>
 
             {/* 카테고리 두번째 탭 */}
-            <div className='flex flex-col'>
+            <div className={`${styles.n_flex_col}`}>
                 {activeSubCategory?.isActive === true && activeSubCategory?.categoryData?.sub?.map((i: CategoryData, _) => (
                     <div
                         key={i.id}
@@ -71,20 +72,20 @@ const DropDown = ({ size, categoryData, setDropDown }: DropDownProps) => {
                         onMouseEnter={() => handleHover(2, true, size * 3, i)}
                         className={`w-[${size + 'px'}]`}
                     >
-                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
+                        <h1 className={`${styles.category_dropdown_item}`}>{i.title}</h1>
                     </div>
                 ))}
             </div>
 
             {/* 카테고리 세번째 탭 */}
-            <div className='flex flex-col'>
+            <div className={`${styles.n_flex_col}`}>
                 {activeSSubCategory?.isActive === true && activeSSubCategory?.categoryData?.sub?.map((i: CategoryData, _) => (
                     <div
                         key={i.id}
                         onClick={() => { submitHandle(3, i) }}
                         className={`w-[${size + 'px'}]`}
                     >
-                        <h1 className='m-1 p-3 cursor-pointer select-none text-sm md:text-base'>{i.title}</h1>
+                        <h1 className={`${styles.category_dropdown_item}`}>{i.title}</h1>
                     </div>
                 ))}
             </div>

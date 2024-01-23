@@ -12,7 +12,7 @@ const WishListItem = ({ cartData }: WishListItemProps) => {
     <div className='border-y p-1 flex space-x-1'>
       <div className='flex flex-col items-center justify-center text-xl'><IoBagHandleOutline className='hover:opacity-30'/></div>
       <img src="https://shopping-phinf.pstatic.net/main_3902233/39022339335.1.jpg?type=f300" className='w-[80px] h-[80px]' />
-      <div className='flex flex-col space-y-1 overflow-auto text-sm md:text-base'>
+      <div className='flex flex-col space-y-1 overflow-auto text-sm xl:text-base'>
         <p>{cartData.name}</p>
         <p>{cartData.price}원</p>
       </div>

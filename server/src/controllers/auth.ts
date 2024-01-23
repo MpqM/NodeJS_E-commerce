@@ -34,3 +34,10 @@ export async function getAuth(req: Request, res: Response, next: NextFunction) {
         res.status(201).json({ success: true, result });
     } catch (error) { next(error) }
 }
+
+export async function logout(req: Request, res: Response, next: NextFunction) {
+    try {
+        res.cookie("token", null, {expires: new Date(Date.now()), httpOnly: true});
+        res.status(201).json({success: true, message: "로그아웃 하였습니다."})
+    } catch (error) { next(error); }
+};
